@@ -24,6 +24,7 @@
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
+        "dev-hmr": "environments/environment.dev-hmr.ts",
         "prod": "environments/environment.prod.ts"
       }
     }
@@ -41,7 +42,7 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "scss",
     "prefixInterfaces": false,
     "inline": {
       "style": false,
