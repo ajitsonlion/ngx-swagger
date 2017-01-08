@@ -1,0 +1,21 @@
+<td-expansion-panel [label]="apiTag?.name"
+                    [sublabel]="apiTag?.description"
+                    (expanded)="expandExpansion1Event()"
+                    (collapsed)="collapseExpansion1Event()">
+  <td-expansion-summary *ngIf="apiTag.externalDocs && false">
+    <md-list>
+      <md-list-item>
+        <h3 md-line>{{apiTag.externalDocs.description}}</h3>
+        <h3 md-line>{{apiTag.externalDocs.url}}</h3>
+      </md-list-item>
+    </md-list>
+  </td-expansion-summary>
+  <md-nav-list>
+    <template let-operation let-last="last" ngFor [ngForOf]="operations">
+      <app-api-item [operation]="operation"></app-api-item>
+
+      <md-divider *ngIf="!last"></md-divider>
+    </template>
+  </md-nav-list>
+  <md-divider></md-divider>
+</td-expansion-panel>

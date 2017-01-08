@@ -1,8 +1,6 @@
-
 import {ExternalDocumentationObject, SecurityRequirementObject, ResponsesObject, ResponseObject} from './apidoc';
 import {ApiModelUtils} from './api-utils';
 import {ParameterObject} from './api-parameter';
-
 import * as _ from 'lodash';
 
 const HTTP_METHOD_PATCH = 'PATCH';
@@ -17,12 +15,12 @@ const APPLICATION_JSON = 'application/json';
 const APPLICATION_XML = 'application/xml';
 
 const METHOD_CLASS: Object = {
-    GET: 'grey lighten-1',
-    POST: 'teal lighten-2',
-    PUT: 'yellow darken-2',
-    DELETE: 'red lighten-2',
-    PATCH: 'light-blue lighten-2',
-    HEAD: 'pink lighten-2'
+  GET: 'primary',
+  POST: 'accent',
+  PUT: 'accent',
+  DELETE: 'warn',
+  PATCH: 'primary',
+  HEAD: 'primary'
 };
 
 export class OperationObject {
@@ -86,6 +84,7 @@ export class OperationObject {
     }
     getMethodClass(): string {
         if (this.name) {
+          console.log(this.name, METHOD_CLASS[this.name]);
             return METHOD_CLASS[this.name];
         }
     }

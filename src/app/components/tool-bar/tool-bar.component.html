@@ -1,0 +1,28 @@
+<!-- toolbar start -->
+<md-toolbar color="primary">
+  <button md-icon-button (click)="onEdit()">
+    <md-icon>mode_edit</md-icon>
+  </button>
+  <span *ngIf="!editable">{{definition?.info?.title}}</span>
+  <md-input-container flex *ngIf="editable">
+    <input md-input
+           [placeholder]="definition?.info?.title"
+           [value]="apiUrl"
+           (focusout)="changeApi(api.value)" #api autofocus>
+  </md-input-container>
+  <td-search-box placeholder="Search" [alwaysVisible]="false" flex></td-search-box>
+  <button md-icon-button [mdMenuTriggerFor]="toolbarMenu1">
+    <md-icon>more_vert</md-icon>
+  </button>
+  <md-menu #toolbarMenu1="mdMenu">
+    <button md-menu-item>
+      <md-icon>settings</md-icon>
+      <span>Settings</span>
+    </button>
+    <button md-menu-item>
+      <md-icon>exit_to_app</md-icon>
+      <span>Sign out</span>
+    </button>
+  </md-menu>
+</md-toolbar>
+<!-- toolbar end -->

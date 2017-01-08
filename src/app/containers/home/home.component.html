@@ -1,0 +1,5 @@
+<app-tool-bar [definition]="definition | async"
+              [apiUrl]="apiUrl |async"
+              (apiChange)="onApiChange($event)">
+</app-tool-bar>
+<app-api-list [definition]="definition |async"></app-api-list>
